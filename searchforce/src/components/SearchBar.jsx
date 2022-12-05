@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, Typography } from 'antd';
 
 const { Title } = Typography;
-
 const SearchBar = () => {
     const [searchValue, setSearchValue] = useState('');
 
-    console.log(searchValue);
+    const [allFilms, setAllFilms] = useState([]);
+
+    const swApiUrl = 'https://swapi.py4e.com/api/films';
+
+    useEffect(() => {
+        fetch(swApiUrl)
+            .then(response => response.json())
+            .then(data => setAllFilms(data.results))
+            .catch(console.error());
+    }, []);
+
     return (
         <>
             <Title>searchForce</Title>
