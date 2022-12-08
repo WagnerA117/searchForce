@@ -3,7 +3,7 @@ import { Input, Typography } from 'antd';
 
 const { Title } = Typography;
 const SearchBar = () => {
-    const [searchValue, setSearchValue] = useState('');
+    const [search, setSearch] = useState('');
 
     const [allFilms, setAllFilms] = useState([]);
 
@@ -16,13 +16,21 @@ const SearchBar = () => {
             .catch(console.error());
     }, []);
 
+    const searchResults = allFilms.filter(i => {
+        const { title } = i;
+
+        const regex = new RegExp(search, 'ig');
+
+        return title.toString().search(regex) !== -1;
+    });
+
     return (
         <>
             <Title>searchForce</Title>
 
             <Input
                 placeholder="Start typing to search a movie!"
-                onChange={e => setSearchValue(e.target.value)}
+                onChange={e => setSearch(e.target.value)}
             />
         </>
     );
