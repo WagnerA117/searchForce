@@ -1,10 +1,10 @@
 import React from 'react';
-import SearchBar from './components/SearchBar';
+import MainPage from './components/MainPage';
 
 const App = () => {
     return (
         <div className="App">
-            <SearchBar />
+            <MainPage />
         </div>
     );
 };
