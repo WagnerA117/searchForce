@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
     List,
     Card,
@@ -6,9 +7,10 @@ import {
     Input,
     Typography,
     Modal,
-    Row,
     Space,
+    Button,
 } from 'antd';
+import MovieInfo from './MovieInfo';
 
 const { Title } = Typography;
 
@@ -42,11 +44,15 @@ const MainPage = () => {
         });
 
     // You need not display planets, starships, vehicles and species or characters.
-
-    console.log(selectedMovie);
     return (
         <>
-            <Title>searchForce</Title>
+            <Link
+                to={{
+                    pathname: '/',
+                }}
+            >
+                <Title>searchForce</Title>
+            </Link>
 
             <Input
                 placeholder="Start typing to search a movie!"
@@ -66,12 +72,18 @@ const MainPage = () => {
                             setSelectedMovie(item);
                         }}
                     >
-                        {' '}
-                        {item.title}
+                        <Button>
+                            {' '}
+                            <Link
+                                to={`/movieinfo/${item.episode_id}`}
+                                state={{ item }}
+                            >
+                                {item.title}
+                            </Link>
+                        </Button>
                     </Card>
                 )}
             />
-
             <Modal
                 open={selectedMovie !== undefined}
                 onCancel={() => setSelectedMovie(undefined)}
