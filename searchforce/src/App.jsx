@@ -1,11 +1,17 @@
 import React from 'react';
-import SearchBar from './components/SearchBar';
+import { Route, Routes } from 'react-router-dom';
+
+import MainPage from './components/MainPage';
+import MovieInfo from './components/MovieInfo';
 
 const App = () => {
     return (
-        <div className="App">
-            <SearchBar />
-        </div>
+        <>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/movieinfo/:episode_id" element={<MovieInfo />} />
+            </Routes>
+        </>
     );
 };
 
