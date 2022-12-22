@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-    List,
+    Button,
     Card,
+    Col,
     Divider,
     Input,
+    List,
+    Row,
+    Switch,
     Typography,
-    Modal,
-    Space,
-    Button,
 } from 'antd';
-import MovieInfo from './MovieInfo';
 
-const { Title } = Typography;
+const { Text, Title } = Typography;
 
 const MainPage = () => {
     const [search, setSearch] = useState('');
@@ -46,54 +46,75 @@ const MainPage = () => {
     // You need not display planets, starships, vehicles and species or characters.
     return (
         <>
-            <Link
-                to={{
-                    pathname: '/',
-                }}
-            >
-                <Title>searchForce</Title>
-            </Link>
-
-            <Input
-                placeholder="Start typing to search a movie!"
-                onChange={e => setSearch(e.target.value)}
-            />
-
-            <List
-                dataSource={searchResults}
-                grid={{
-                    gutter: 10,
-                    column: 2,
-                }}
-                renderItem={item => (
-                    <Card
-                        title={item.episode_id}
-                        onClick={() => {
-                            setSelectedMovie(item);
+            <Card>
+                <Row
+                    style={{
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Col
+                        style={{
+                            backgroundColor: 'blue',
+                            padding: '8px',
+                            justifyContent: 'center',
                         }}
+                        span={8}
                     >
-                        <Button>
-                            {' '}
-                            <Link
-                                to={`/movieinfo/${item.episode_id}`}
-                                state={{ item }}
-                            >
-                                {item.title}
-                            </Link>
-                        </Button>
-                    </Card>
-                )}
-            />
-            <Modal
-                open={selectedMovie !== undefined}
-                onCancel={() => setSelectedMovie(undefined)}
-            >
-                <Space style={{ width: '100%', justifyContent: 'center' }}>
-                    <Title>{selectedMovie?.title}</Title>
-                </Space>
+                        <Link
+                            to={{
+                                pathname: '/',
+                            }}
+                        >
+                            <Title>searchForce</Title>
+                        </Link>
+                    </Col>
+
+                    <Col
+                        style={{
+                            backgroundColor: 'red',
+                        }}
+                        span={4}
+                    >
+                        <Text> Dark Side</Text>
+                        <Switch />
+                        <Text> Light Side</Text>
+                    </Col>
+                </Row>
+
+                <Input
+                    placeholder="Start typing to search a movie!"
+                    onChange={e => setSearch(e.target.value)}
+                />
 
                 <Divider />
-            </Modal>
+                <List
+                    dataSource={searchResults}
+                    itemLayout="vertical"
+                    renderItem={item => (
+                        <Row
+                            style={{
+                                width: '100',
+                                justifyContent: 'center',
+                                margin: '1em',
+                            }}
+                            direction="vertical"
+                            title={item.episode_id}
+                        >
+                            <Button>
+                                {' '}
+                                <Link
+                                    to={`/movieinfo/${item.episode_id}`}
+                                    state={{ item }}
+                                >
+                                    {item.title}
+                                </Link>
+                            </Button>
+                        </Row>
+                    )}
+                />
+            </Card>
+
+            <Divider />
         </>
     );
 };
