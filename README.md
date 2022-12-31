@@ -12,8 +12,8 @@ Keeping in theme with using the Star Wars Api to search, colours and text will b
 
 
 <p align='center'>
-
-<img width="893" alt="image" src="https://user-images.githubusercontent.com/77886511/210148057-940b8c67-7a9f-469f-b86a-a8a564453673.png">
+  
+<img width="886" alt="image" src="https://user-images.githubusercontent.com/77886511/210148711-2596e773-e823-4d73-bb4f-9390dc53c90e.png">
 
 </p>
 
