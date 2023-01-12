@@ -18,17 +18,15 @@ Keeping in theme with using the Star Wars Api to search information, colours wil
 
 v- 1.2
 
+Version 1.2 will further refine some features and functionality
+
 <ul>
   <li> 
     Option to choose search by different categories
   </li>
   
-  <li> 
-    Styling updates
-  </li>
-  
-  <li> 
-
+   <li> 
+    Update styling of 
   </li>
   
  </ul>
