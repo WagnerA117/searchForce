@@ -1,3 +1,7 @@
+@font-face {
+	font-family: 'starWarsFont';
+	src: url('./fonts/StarJediHollow-A4lL.ttf');
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +11,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.starWarsFont{
+	font-family: 'starWars';
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
