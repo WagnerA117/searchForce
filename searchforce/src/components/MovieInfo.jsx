@@ -14,7 +14,7 @@ export const generalStyling = {
         justifyContent: 'center',
     },
     lightSide: {
-        backgroundColor: 'grey',
+        backgroundColor: 'rgb(37, 118, 195)',
         color: 'black',
         display: 'flex',
         justifyContent: 'center',

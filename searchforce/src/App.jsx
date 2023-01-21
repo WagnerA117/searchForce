@@ -3,10 +3,10 @@
 import React, { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 // eslint-disable-next-line import/no-cycle
-import { Switch } from 'antd';
 import MainPage from './components/MainPage';
 import MovieInfo from './components/MovieInfo';
 import SearchResults from './components/SearchResults';
+import './index.css';
 
 export const ThemeContext = createContext('lightSide');
 const App = () => {
@@ -18,21 +18,19 @@ const App = () => {
     const [theme, setTheme] = useState('lightSide');
 
     return (
-        <>
-            <ThemeContext.Provider value={{ theme, setTheme }}>
-                <MainPage />
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+            <MainPage />
 
-                <Routes>
-                    <Route exact path="/" element={<SearchResults />} />
+            <Routes>
+                <Route exact path="/" element={<SearchResults />} />
 
-                    <Route
-                        exact
-                        path="/movieinfo/:episode_id"
-                        element={<MovieInfo />}
-                    />
-                </Routes>
-            </ThemeContext.Provider>
-        </>
+                <Route
+                    exact
+                    path="/movieinfo/:episode_id"
+                    element={<MovieInfo />}
+                />
+            </Routes>
+        </ThemeContext.Provider>
     );
 };
 

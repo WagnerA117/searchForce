@@ -61,10 +61,9 @@ const SearchResults = () => {
 
                 <Input
                     placeholder="Start typing to search a movie!"
+                    justifyContent="center"
                     onChange={e => setSearch(e.target.value)}
                 />
-
-                <Divider />
                 <List
                     dataSource={searchResults}
                     itemLayout="vertical"
