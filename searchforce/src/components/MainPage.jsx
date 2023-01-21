@@ -56,7 +56,7 @@ const MainPage = () => {
                                 pathname: '/',
                             }}
                         >
-                            <Title style={mainPageStyle}>searchForce</Title>
+                            <Title style={mainPageStyle}>Use The Search</Title>
                         </Link>
                     </Col>
                 </Row>
