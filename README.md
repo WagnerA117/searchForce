@@ -5,7 +5,7 @@ Creating a basic search feature using ant-d
 
 The idea is to go froma basic version and add features with each iteration. 
 
-v-1 Search using filter and using react context to have a light/dark mode
+v-1 Search using a filter method and React Context to create a light/dark mode.
 
 
 <p align='center'>
